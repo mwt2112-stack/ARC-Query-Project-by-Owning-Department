@@ -475,10 +475,138 @@ main{max-width:980px;margin:0 auto;padding:2.5rem 2.5rem 5rem;}
           #cur-step6s6   { animation: cur-move-step6s6 4.5s cubic-bezier(0.4,0,0.2,1) infinite; }
           #ripple-step6s6 { animation: ripple-step6s6 4.5s ease-out infinite; }
           </style>
-          <div class="approval-box">
-            <div class="box-label">What You Get</div>
-            Export includes: Department, Unit, Project ID & Description, Team Role, Team Member, Status, CTV, ARRA, CFDA, Clinical Trial, Sponsor, Funding Mechanism, Award Fund, Billing Frequency, Award Start/End Dates, Purpose Code, Gift Number, Function, and MOT Segment.
+          <div class="col-glossary-trigger" onclick="this.classList.toggle('open')">
+            <div class="col-glossary-header">
+              <div class="col-glossary-eyebrow">Once you run the report, start here</div>
+              <div class="col-glossary-title">Key Report Column Guide <span class="col-caret">▾</span></div>
+              <div class="col-glossary-sub">An explainer of the most important headers in your export — tap to expand</div>
+            </div>
+            <div class="col-glossary-body">
+
+              <div class="col-group">
+                <div class="col-group-label">Core Identifiers</div>
+                <div class="col-row"><span class="col-name">Dept</span><span class="col-def">Department ID number</span></div>
+                <div class="col-row"><span class="col-name">Department Description</span><span class="col-def">Name of the department</span></div>
+                <div class="col-row"><span class="col-name">Unit</span><span class="col-def">PC Business Unit — identifies the funding source type. <strong>GENRL</strong> = unrestricted projects, <strong>SPONS</strong> = sponsored projects</span></div>
+                <div class="col-row"><span class="col-name">Project</span><span class="col-def">Unique project ID in ARC</span></div>
+                <div class="col-row"><span class="col-name">Project Description</span><span class="col-def">Name/title of the project</span></div>
+              </div>
+
+              <div class="col-group">
+                <div class="col-group-label">Team</div>
+                <div class="col-row"><span class="col-name">Project Team Role</span><span class="col-def">Role assigned to the team member — e.g. Report Access, Project Manager, Principal Investigator</span></div>
+                <div class="col-row"><span class="col-name">Project Team Member</span><span class="col-def">Name of the person in that role</span></div>
+              </div>
+
+              <div class="col-group">
+                <div class="col-group-label">Status</div>
+                <div class="col-row"><span class="col-name">Status</span><span class="col-def"><strong>A</strong> = Active &nbsp;·&nbsp; <strong>I</strong> = Inactive &nbsp;·&nbsp; <strong>D</strong> = Deleted</span></div>
+              </div>
+
+              <div class="col-group">
+                <div class="col-group-label">Sponsor & Funding</div>
+                <div class="col-row"><span class="col-name">Sponsor</span><span class="col-def">The funding organization (NIH, NSF, private foundation, etc.)</span></div>
+                <div class="col-row"><span class="col-name">Funding Mech</span><span class="col-def">Funding mechanism type — grant, contract, gift, etc.</span></div>
+                <div class="col-row"><span class="col-name">Orig Sponsor</span><span class="col-def">Original sponsor if the award passed through another institution</span></div>
+                <div class="col-row"><span class="col-name">Orig Award No.</span><span class="col-def">The sponsor's own award number (not Columbia's internal ID)</span></div>
+                <div class="col-row"><span class="col-name">Gift Number</span><span class="col-def">Gift ID associated with the project, when funded by a gift</span></div>
+              </div>
+
+              <div class="col-group">
+                <div class="col-group-label">Billing</div>
+                <div class="col-row"><span class="col-name">Bill Type</span><span class="col-def">How the project is billed — cost reimbursable, fixed price, etc.</span></div>
+                <div class="col-row"><span class="col-name">Bill Frequency</span><span class="col-def">How often invoices are generated</span></div>
+              </div>
+
+              <div class="col-group">
+                <div class="col-group-label">Dates</div>
+                <div class="col-row"><span class="col-name">Award Cyc Start</span><span class="col-def">Start date of the current award cycle</span></div>
+                <div class="col-row"><span class="col-name">Award Cycle End</span><span class="col-def">End date of the current award cycle</span></div>
+                <div class="col-row"><span class="col-name">Start Date</span><span class="col-def">Project start date</span></div>
+                <div class="col-row"><span class="col-name">End Date</span><span class="col-def">Project end date — watch this for expiring projects</span></div>
+              </div>
+
+              <div class="col-group">
+                <div class="col-group-label">Classification</div>
+                <div class="col-row"><span class="col-name">Purpose Code</span><span class="col-def">Used primarily for gifts to classify the intended use of funds</span></div>
+                <div class="col-row"><span class="col-name">Function</span><span class="col-def">The type of institution-wide activity the project supports — e.g. Research, Instruction, Public Service</span></div>
+                <div class="col-row"><span class="col-name">MOT Segment</span><span class="col-def">Method of Transfer — how funds flow to Columbia</span></div>
+                <div class="col-row"><span class="col-name">Fund</span><span class="col-def">The fund associated with the project</span></div>
+              </div>
+
+              <div class="col-group" style="border-bottom:none;">
+                <div class="col-group-label">Compliance</div>
+                <div class="col-row"><span class="col-name">CFDA</span><span class="col-def">Federal program ID number — required for federal awards</span></div>
+                <div class="col-row"><span class="col-name">Clinical Trial</span><span class="col-def">Flags whether the project is a registered clinical trial</span></div>
+                <div class="col-row"><span class="col-name">Cost Share Proj / Amt</span><span class="col-def">Identifies cost sharing commitments and dollar amounts</span></div>
+                <div class="col-row"><span class="col-name">Fin Rptg Freq</span><span class="col-def">How often financial reports are due to the sponsor</span></div>
+              </div>
+
+            </div>
           </div>
+
+          <style>
+          .col-glossary-trigger {
+            margin-top: 1.25rem;
+            background: var(--off-white);
+            border: 1.5px solid var(--paper-edge);
+            border-left: 4px solid var(--navy);
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            box-shadow: 0 2px 0 rgba(0,0,0,.04), 0 6px 14px rgba(0,0,0,.04);
+            transition: border-color .2s, box-shadow .2s;
+            user-select: none;
+          }
+          .col-glossary-trigger:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(63,87,189,.1); }
+          .col-glossary-header { padding: 1rem 1.25rem; }
+          .col-glossary-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
+            color: var(--gold); font-weight: 700; margin-bottom: .35rem;
+          }
+          .col-glossary-title {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: .2rem;
+            display: flex; align-items: center; gap: .5rem;
+          }
+          .col-caret { color: var(--blue); transition: transform .25s; font-size: .85rem; }
+          .col-glossary-trigger.open .col-caret { transform: rotate(180deg); }
+          .col-glossary-sub { font-size: .82rem; color: var(--muted); }
+          .col-glossary-body {
+            max-height: 0; overflow: hidden;
+            transition: max-height .4s cubic-bezier(0.4,0,0.2,1);
+            border-top: 0px solid var(--line);
+          }
+          .col-glossary-trigger.open .col-glossary-body {
+            max-height: 2000px;
+            border-top: 1px solid var(--line);
+          }
+          .col-group {
+            padding: .85rem 1.25rem;
+            border-bottom: 1px solid var(--line);
+          }
+          .col-group-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .6rem; letter-spacing: .18em; text-transform: uppercase;
+            color: var(--blue); font-weight: 700; margin-bottom: .6rem;
+          }
+          .col-row {
+            display: flex; gap: 0; padding: .5rem 0;
+            border-bottom: 1px dashed rgba(0,0,0,.07); font-size: .85rem;
+            align-items: baseline;
+          }
+          .col-row:last-child { border-bottom: none; }
+          .col-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .7rem; font-weight: 700; color: #fff;
+            background: var(--navy); border-radius: 4px;
+            padding: .2rem .55rem; flex-shrink: 0;
+            min-width: fit-content; margin-right: 1rem;
+            white-space: nowrap; align-self: flex-start; margin-top: .1rem;
+          }
+          .col-def { color: var(--paper-ink-dim); line-height: 1.55; flex: 1; }
+          .col-def strong { color: var(--navy); font-weight: 700; }
+          </style>
         </div>
       </div>
 
